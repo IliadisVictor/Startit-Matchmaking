@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="css/applicants.css" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Poppins"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Roboto:500,900,100,300,700,400"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap"
+      rel="stylesheet"
+    />
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js" type="text/javascript"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/js/select2.min.js"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/css/select2.min.css" rel="stylesheet" />
+
+    <script src="https://kit.fontawesome.com/aec989c09b.js" crossorigin="anonymous"></script>
+    <script src="js/applicants.js" defer></script>
+    <title>Applicants</title>
+  </head>
+  <body>
+    <nav class="navbar">
+      <div class="brand-title">StartIt</div>
+      <div class="navbar-links">
+        <ul>
+          <li><img src="/images/Component 6 – 6.svg" alt="" style="padding: 15px 0 0 0;"></li>
+          <li><a href="homepage.html">Home</a></li>
+          <li><a href="applicants.html" id="active">Applicants</a></li>
+          <li><a href="teams.html">Teams</a></li>
+        </ul>
+      </div>
+    </nav>
+    <main class="main">
+      <div class="title-button">
+        <h1 id="numberOfApplicants">Showing 20 applicants</h1>
+        <button id="filters-button" onclick="showDiv()">Filters</button>
+      </div>    
+      
+      
+
+      <div id="filters">
+        <select name="Study Field" id="filter-Study" class="filter" >
+          <option value="0">Study Field <img src="/images/Icon ionic-ios-arrow-down.svg" alt=""></option>
+          <option value="Business Administration">
+            Business Administration
+          </option>
+          <option value="Marketing">Marketing</option>
+          <option value="Informatics">Informatics</option>
+          <option value="Engineering">Engineering</option>
+          <option value="Economic Studies">Economic Studies</option>
+          <option value="Studies of Law">Studies of Law</option>
+          <option value="Health Studies">Health Studies</option>
+          <option value="Pedagogical Studies">Pedagogical Studies</option>
+          <option value="Other">Other</option>
+        </select>
+        <select name="Education Level" id="filter-Education"  class="filter">
+          <option value="0" selected>Education Level</option>
+          <option value="Bachelor Degree">Bachelor Degree</option>
+          <option value="Master Degree">Master Degree</option>
+          <option value="PhD CandidatePhD Candidate</option>
+          <option value="PhD Holder">PhD Holder</option>
+        </select>
+        <select name="Age" id="filter-Age" class="filter">
+          <option value="0" selected>Age</option>
+          <option value="18-25">18-25</option>
+          <option value="25-35">25-35</option>
+          <option value="35+">35+</option>
+        </select>
+        <select name="Experience" id="filter-Experience" class="filter">
+          <option value="-1" selected>Experience</option>
+          <option value="0">0 years</option>
+          <option value="1-2">1-2 years</option>
+          <option value="2-5">2-5 years</option>
+          <option value="5-10">5-10 years</option>
+          <option value="10+">More than 10 years</option>
+        </select>
+        <select name="Status" id="filter-Status"  class="filter">
+          <option value="0" selected>Status</option>
+          <option value="Assigned">Assigned</option>
+          <option value="Pending">Pending</option>
+        </select>
+      </div>
+
+      <table align="center">
+        <thead>
+          <tr>
+            <th>Fullname</th>
+            <th>Study Field</th>
+            <th>Education Level</th>
+            <th>Age</th>
+            <th>Experience</th>
+            <th>Status</th>
+          </tr>
+        </thead>
+
+        <tbody id="tableData" align="center">
+          <tr>
+            <td class="Name" data-Name="Andreas Sofos">Andreas Sofos</td>
+            <td class="Study" data-Study="Engineering">Engineering</td>
+            <td class="Education" data-Education="Post-Graduate">Post-Graduate</td>
+            <td class="Age" data-Age="18-24">18-24</td>
+            <td class="Experience" data-Experience="0">0</td>
+            <td class="Status" data-Status="Assigned"><i class="fas fa-circle fa-xs" style="color: #24A148;"></i> Assigned</td>
+          </tr>
+          <tr>
+            <td class="Name" data-Name="Andreas Sofos">Andreas Sofos</td>
+            <td class="Study" data-Study="Informatics">Informatics</td>
+            <td class="Education" data-Education="Post-Graduate">Post-Graduate</td>
+            <td class="Age" data-Age="18-24">18-24</td>
+            <td class="Experience" data-Experience="1-2">1-2</td>
+            <td class="Status" data-Status="Pending"><i class="fas fa-circle fa-xs" style="color: #DA1E28;"></i> Pending </td>
+          </tr>
+          <tr>
+            <td class="Name" data-Name="Andreas Sofos">Andreas Sofos</td>
+            <td class="Study" data-Study="Informatics">Informatics</td>
+            <td class="Education" data-Education="Post-Graduate">Post-Graduate</td>
+            <td class="Age" data-Age="18-24">18-24</td>
+            <td class="Experience" data-Experience="1-2">1-2</td>
+            <td class="Status" data-Status="Assigned">Assigned</td>
+          </tr>
+          <tr>
+            <td class="Name" data-Name="Andreas Sofos">Andreas Sofos</td>
+            <td class="Study" data-Study="Pedagogical Studies">Pedagogical Studies</td>
+            <td class="Education" data-Education="Post-Graduate">Post-Graduate</td>
+            <td class="Age" data-Age="18-24">18-24</td>
+            <td class="Experience" data-Experience="2-5">2-5</td>
+            <td class="Status" data-Status="Assigned">Assigned</td>
+          </tr>
+          <tr>
+            <td class="Name" data-Name="Andreas Sofos">Andreas Sofos</td>
+            <td class="Study" data-Study="Studies of Law">Studies of Law</td>
+            <td class="Education" data-Education="Post-Graduate">Post-Graduate</td>
+            <td class="Age" data-Age="18-24">18-24</td>
+            <td class="Experience data-Experience="5-10">5-10</td>
+            <td class="Status" data-Status="Assigned">Assigned</td>
+          </tr>
+          <tr>
+            <td class="Name" data-Name="Andreas Sofos">Andreas Sofos</td>
+            <td class="Study" data-Study="Marketing">Marketing</td>
+            <td class="Education" data-Education="Post-Graduate">Post-Graduate</td>
+            <td class="Age" data-Age="18-25">18-25</td>
+            <td class="Experience" data-Experience="10+">10+</td>
+            <td class="Status" data-Status="Assigned">Assigned</td>
+          </tr>
+        </tbody>
+      </table>
+    </main>
+  </body>
+</html>
