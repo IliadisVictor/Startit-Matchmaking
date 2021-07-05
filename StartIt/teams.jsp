@@ -47,7 +47,6 @@
   Connection con = dbobj.getConnection();
   teams = dao.getTeams(con);
   CompleteTeam ct = new CompleteTeam();
-  teams = ct.sortByDiversity(teams);
   ArrayList<User> unassigned = dao.getUnassignedUsers(con);
   %>
     <nav class="navbar">
